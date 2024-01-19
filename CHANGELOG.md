@@ -1,5 +1,12 @@
 
 
+## [1.0.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.0.0...v1.0.1) (2024-01-19)
+
+
+### Maintenance
+
+* added card icon listing template ([52f6b9d](https://github.com/RedTurtle/volto-wildcard-media/commit/52f6b9d6a6521c078b6e104a9505c9a07ac5324b))
+
 ## 1.0.0 (2024-01-19)
 
 
