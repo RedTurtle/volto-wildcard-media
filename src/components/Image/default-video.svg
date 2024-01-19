@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="399" height="299" viewBox="0 0 399 299">
+  <g id="Raggruppa_3" data-name="Raggruppa 3" transform="translate(49 74)">
+    <g id="default-image" transform="translate(-49.5 -74.5)">
+      <rect id="Rettangolo_1" data-name="Rettangolo 1" width="399" height="299" rx="3" transform="translate(0.5 0.5)" fill="#d8e1e3"/>
+      <g id="Raggruppa_2" data-name="Raggruppa 2" transform="translate(130 90)">
+        <rect id="Rettangolo_2" data-name="Rettangolo 2" width="140" height="120" rx="3" fill="rgba(255,255,255,0.5)"/>
+        <path id="video-solid" d="M0,72.069A8.076,8.076,0,0,1,8.069,64H40.344a8.076,8.076,0,0,1,8.069,8.069v32.275a8.076,8.076,0,0,1-8.069,8.069H8.069A8.076,8.076,0,0,1,0,104.344Zm70.488-3.555a4.038,4.038,0,0,1,2.131,3.555v32.275A4.036,4.036,0,0,1,66.34,107.7l-12.1-8.069-1.79-1.2V77.982l1.79-1.2,12.1-8.069a4.049,4.049,0,0,1,4.148-.2Z" transform="translate(33.691 -28.206)" fill="#93acc8"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="399" height="299" viewBox="0 0 399 299">
+  <g id="Raggruppa_3" data-name="Raggruppa 3" transform="translate(49 74)">
+    <g id="default-image" transform="translate(-49.5 -74.5)">
+      <rect id="Rettangolo_1" data-name="Rettangolo 1" width="399" height="299" rx="3" transform="translate(0.5 0.5)" fill="#d8e1e3"/>
+      <g id="Raggruppa_2" data-name="Raggruppa 2" transform="translate(130 90)">
+        <rect id="Rettangolo_2" data-name="Rettangolo 2" width="140" height="120" rx="3" fill="rgba(255,255,255,0.5)"/>
+        <path id="music-solid" d="M50.074.583a3.217,3.217,0,0,1,1.294,2.578V36.873c0,4.435-4.314,8.026-9.632,8.026s-9.632-3.592-9.632-8.026,4.314-8.026,9.632-8.026a11.187,11.187,0,0,1,3.211.462V14.7L19.263,22.405V43.294c0,4.435-4.314,8.026-9.632,8.026S0,47.728,0,43.294s4.314-8.026,9.632-8.026a11.186,11.186,0,0,1,3.211.462V12.794a3.227,3.227,0,0,1,2.288-3.08L47.235.082a3.194,3.194,0,0,1,2.839.5Z" transform="translate(44.316 34.367)" fill="#93acc8"/>
+      </g>
+    </g>
+  </g>
+</svg>

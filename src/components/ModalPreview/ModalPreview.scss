@@ -1,0 +1,12 @@
+.modal
+  .modal-dialog.gallery-preview
+  .modal-content
+  .item-preview.audio-preview {
+  min-height: 0;
+  flex-direction: column;
+}
+
+.embedd-video {
+  min-height: 72vh;
+  width: 100%;
+}
