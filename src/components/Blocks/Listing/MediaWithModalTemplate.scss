@@ -13,3 +13,17 @@
 .card-with-modal-video a .overlay-card {
   display: none;
 }
+
+.icon-media {
+  position: absolute;
+  background: #fff;
+  right: 24px;
+  top: 24px;
+  height: 56px;
+  border-radius: 5px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}

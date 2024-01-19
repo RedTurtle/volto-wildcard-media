@@ -151,7 +151,7 @@ const MediaWithModalTemplate = ({
                         {(item['@type'] === 'WildcardVideo' ||
                           item['@type'] === 'WildcardAudio') && (
                           <CardCategory
-                            className="icon-video"
+                            className="icon-media"
                             iconName={
                               item['@type'] === 'WildcardVideo'
                                 ? 'it-video'
