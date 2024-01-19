@@ -1,6 +1,6 @@
 # Volto WildCard Media addon
 
-This Volto Addon uses https://github.com/collective/wildcard.media package.
+This Volto Addon uses https://github.com/collective/wildcard.media package and design-comuni-plone-theme dependencies https://github.com/italia/design-comuni-plone-theme.
 
 Features
 --------

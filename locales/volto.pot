@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-10-20T11:02:03.823Z\n"
+"POT-Creation-Date: 2024-01-19T11:51:07.871Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -13,88 +13,42 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Contatti
-msgid "Contatti"
+#: components/Blocks/Listing/MediaWithModalTemplate
+# defaultMessage: Vedi
+msgid "default_detail_link"
 msgstr ""
 
-#: components/ItaliaTheme/View/ServizioView/ServizioContatti
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Contatti
-msgid "contatti"
+#: components/Blocks/Listing/MediaWithModalTemplate
+# defaultMessage: Immagine di placeholder
+msgid "image_placeholder"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Contatti interni
-msgid "contatti_interni"
+#: components/Blocks/Listing/MediaWithModalTemplate
+# defaultMessage: Immagine di placeholder per gli audio
+msgid "image_placeholder_audio"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Sito web dell'evento
-msgid "event_web_site"
+#: components/Blocks/Listing/MediaWithModalTemplate
+# defaultMessage: Immagine di placeholder per i video
+msgid "image_placeholder_video"
 msgstr ""
 
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: PEC
-msgid "pec"
+#: components/ModalPreview/ModalPreview
+# defaultMessage: Chiudi l'anteprima
+msgid "video_close_preview"
 msgstr ""
 
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Reperibilità oraria:
-msgid "reperibilita"
+#: components/ModalPreview/ModalPreview
+# defaultMessage: Video successivo
+msgid "video_view_next"
 msgstr ""
 
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_luogo"
+#: components/ModalPreview/ModalPreview
+# defaultMessage: Video precedente
+msgid "video_view_prev"
 msgstr ""
 
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Fax
-msgid "riferimento_fax_struttura"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: E-mail
-msgid "riferimento_mail_struttura"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: PEC
-msgid "riferimento_pec_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_luogo"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Telefono
-msgid "riferimento_telefonico_struttura"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Web
-msgid "riferimento_web"
-msgstr ""
-
-#: components/ItaliaTheme/View/VenueView/VenueContacts
-# defaultMessage: Struttura responsabile
-msgid "struttura_responsabile"
-msgstr ""
-
-#: components/ItaliaTheme/View/EventoView/EventoContatti
-# defaultMessage: Con il supporto di
-msgid "supported_by"
-msgstr ""
-
-#: components/ItaliaTheme/View/ServizioView/ServizioTempiScadenze
-# defaultMessage: Tempi e scadenze
-msgid "tempi_e_scadenze"
+#: components/Blocks/Listing/MediaWithModalTemplate
+# defaultMessage: Espandi popup
+msgid "view_popup"
 msgstr ""
