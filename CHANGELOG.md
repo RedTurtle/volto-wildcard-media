@@ -1,5 +1,12 @@
 
 
+## [1.0.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.0.1...v1.0.2) (2024-01-25)
+
+
+### Bug Fixes
+
+* fixed cms transcript field ([de200c6](https://github.com/RedTurtle/volto-wildcard-media/commit/de200c65ecc03220a1178bd529218d77dc0a94d4))
+
 ## [1.0.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.0.0...v1.0.1) (2024-01-19)
 
 
