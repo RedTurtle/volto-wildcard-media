@@ -1,0 +1,13 @@
+.cms-ui {
+    .ui.form .inline.field {
+        &.slate_wysiwyg {
+            &.field-wrapper-transcript {
+                margin-bottom: 1rem;
+            }
+
+            .slate_wysiwyg_box {
+                background: #fafafa;
+            }
+        }
+    }
+}
