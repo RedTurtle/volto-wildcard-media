@@ -6,6 +6,7 @@ import React from 'react';
 import cx from 'classnames';
 import { PagePlaceholderTitle } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import config from '@plone/volto/registry';
+import { defineMessages, useIntl } from 'react-intl';
 
 /**
  * VideoView view component class.
@@ -14,7 +15,16 @@ import config from '@plone/volto/registry';
  * @returns {string} Markup of the view.
  */
 
+ const messages = defineMessages({
+  transcript_label: {
+    id: 'transcript_label',
+    defaultMessage: 'Trascrizione',
+  },
+});
+
 const VideoView = ({ content }) => {
+  const intl = useIntl();
+
   return (
     <div id="page-document" className="ui container px-4">
       {/* Header */}
@@ -61,10 +71,15 @@ const VideoView = ({ content }) => {
       )}
 
       {/* Transcript */}
-      {content?.transcript?.data && (
-        <span
-          dangerouslySetInnerHTML={{ __html: content.transcript.data }}
-        ></span>
+      {(content?.transcript?.data && content?.transcript?.data !== '<p><br></p>') && (
+        <div className="mb-2">
+          <p className="mb-0">
+            <strong>{intl.formatMessage(messages.transcript_label)}</strong>
+          </p>
+          <span
+            dangerouslySetInnerHTML={{ __html: content.transcript.data }}
+          ></span>
+        </div>
       )}
     </div>
   );

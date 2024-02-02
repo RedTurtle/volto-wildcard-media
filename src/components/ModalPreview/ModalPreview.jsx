@@ -84,8 +84,6 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   //   if (items[viewIndex]['@type'] === 'WildcardAudio') dispatch(getContent(items[viewIndex]['@id']));
   // }, [dispatch, itempath, title]);
 
-  console.log('audio', data);
-
   return items?.length > 0 ? (
     <Modal
       isOpen={modalIsOpen}
