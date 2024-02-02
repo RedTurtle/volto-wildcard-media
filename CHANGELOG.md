@@ -1,5 +1,12 @@
 
 
+## [1.1.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.0.2...v1.1.0) (2024-02-02)
+
+
+### Features
+
+* added textarea for copy embed audio code ([0396a9b](https://github.com/RedTurtle/volto-wildcard-media/commit/0396a9b94f21eeb4756a3d018cc7af9abce51e97))
+
 ## [1.0.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.0.1...v1.0.2) (2024-01-25)
 
 
