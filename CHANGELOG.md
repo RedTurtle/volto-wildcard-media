@@ -1,3 +1,10 @@
+### [1.1.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.0...v1.1.1) (2024-02-07)
+
+
+### Maintenance
+
+* updated embed audio code and removed title from player ([80b40a6](https://github.com/RedTurtle/volto-wildcard-media/commit/80b40a60b6dc8d6888635afcd2009385c62c9776))
+
 
 
 ## [1.1.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.0.2...v1.1.0) (2024-02-02)
