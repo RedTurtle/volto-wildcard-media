@@ -148,14 +148,11 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
 
               {items[viewIndex]['@type'] === 'WildcardAudio' &&
                 data?.audio_file?.download && (
-                  <>
-                    <p>{data.audio_file.filename}</p>
-                    <audio
-                      className="mb-4"
-                      controls
-                      src={data.audio_file.download}
-                    ></audio>
-                  </>
+                  <audio
+                    className="mb-4"
+                    controls
+                    src={data.audio_file.download}
+                  ></audio>
                 )}
 
               {items.length > 1 && (

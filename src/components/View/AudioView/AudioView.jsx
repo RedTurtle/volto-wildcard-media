@@ -36,8 +36,8 @@ import { defineMessages, useIntl } from 'react-intl';
 const AudioView = ({ content }) => {
   const intl = useIntl();
 
-  const applyText = (file) => {
-    return '<audio controls src="' + file + '"></audio>';
+  const applyText = (file, type) => {
+    return '<audio controls><source src="' + file + '" type="' + type + '" /></audio>';
   }
 
   const copyText = (text) => {
@@ -66,15 +66,12 @@ const AudioView = ({ content }) => {
       </div>
 
       {/* Embedd audio */}
-      {content?.audio_file ? (
-        <>
-          <p className="ms-3">{content.audio_file.filename}</p>
-          <audio
-            className="mb-4"
-            controls
-            src={content.audio_file.download}
-          ></audio>
-        </>
+      {content?.audio_file?.download ? (
+        <audio
+          className="mb-4"
+          controls
+          src={content.audio_file.download}
+        ></audio>
       ) : (
         <></>
       )}
@@ -96,8 +93,8 @@ const AudioView = ({ content }) => {
         <div className="embed-code-wrapper my-5 pt-2">
           <TextArea
             label={intl.formatMessage(messages.copy_text_label)}
-            value={applyText(content.audio_file.download)}
-            rows={3}
+            value={applyText(content.audio_file.download, content.audio_file["content-type"])}
+            rows={1}
             className="mb-0"
             readOnly
             id="textEmbed"
