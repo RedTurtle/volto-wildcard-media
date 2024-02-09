@@ -1,0 +1,16 @@
+.contenttype-wildcardvideo {
+  .block.video {
+    .video-inner {
+      .ui.embed {
+        width: 660px;
+        height: 415px;
+
+        background: unset;
+        padding-bottom: unset;
+
+        img.placeholder {
+        }
+      }
+    }
+  }
+}
