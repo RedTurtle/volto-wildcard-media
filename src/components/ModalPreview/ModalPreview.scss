@@ -6,7 +6,17 @@
   flex-direction: column;
 }
 
-.embedd-video {
-  min-height: 72vh;
-  width: 100%;
+.modal
+  .modal-dialog.gallery-preview
+  .modal-content
+  .item-preview.video-preview {
+  .block.video {
+    width: 100%;
+
+    .video-inner .ui.embed {
+      min-height: 72vh;
+      background: unset;
+      padding-bottom: unset;
+    }
+  }
 }

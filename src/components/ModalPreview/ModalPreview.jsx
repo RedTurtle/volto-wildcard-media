@@ -47,10 +47,10 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const audioUrl = items[viewIndex]['@id'];
+  const mediaURL = items[viewIndex]['@id'];
 
   const { loading, loaded, error, data } = useSelector(
-    (state) => state.content.subrequests[flattenToAppURL(audioUrl)] ?? {},
+    (state) => state.content.subrequests[flattenToAppURL(mediaURL)] ?? {},
   );
 
   const closeModal = () => {
@@ -60,10 +60,10 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   useEffect(() => {
     if (!loading && !loaded) {
       dispatch(
-        getContent(flattenToAppURL(audioUrl), null, flattenToAppURL(audioUrl)),
+        getContent(flattenToAppURL(mediaURL), null, flattenToAppURL(mediaURL)),
       );
     }
-  }, [dispatch, audioUrl, loading, loaded]);
+  }, [dispatch, mediaURL, loading, loaded]);
 
   useEffect(() => {
     if (viewIndex != null) {
@@ -71,19 +71,7 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
     } else {
       setModalIsOpen(false);
     }
-
-    // if (items[viewIndex]['@type'] === 'WildcardAudio') {
-    //   dispatch(
-    //     getContent(flattenToAppURL(items[viewIndex]['@id'])),
-    //     null,
-    //     getContent(flattenToAppURL(items[viewIndex]['@id'])),
-    //   );
-    // }
   }, [viewIndex]);
-
-  // useEffect(() => {
-  //   if (items[viewIndex]['@type'] === 'WildcardAudio') dispatch(getContent(items[viewIndex]['@id']));
-  // }, [dispatch, itempath, title]);
 
   return items?.length > 0 ? (
     <Modal
@@ -117,6 +105,7 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
             <div
               className={cx('item-preview', {
                 'audio-preview': items[viewIndex]['@type'] === 'WildcardAudio',
+                'video-preview': items[viewIndex]['@type'] === 'WildcardVideo',
               })}
             >
               {items.length > 1 && (
@@ -136,8 +125,10 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
               )}
 
               {items[viewIndex]['@type'] === 'WildcardVideo' &&
-                items[viewIndex]?.video_url && (
-                  <VideoViewer data={{ url: items[viewIndex].video_url }} />
+                data?.video_url && (
+                  <div className="block video">
+                    <VideoViewer data={{ url: data.video_url }} />
+                  </div>
                 )}
               {items[viewIndex]['@type'] === 'WildcardAudio' &&
                 data?.audio_file?.download && (
