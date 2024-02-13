@@ -47,10 +47,13 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const mediaURL = items[viewIndex]['@id'];
+  const audioURL =
+    items[viewIndex]['@type'] === 'WildcardAudio'
+      ? items[viewIndex]['@id']
+      : null;
 
   const { loading, loaded, error, data } = useSelector(
-    (state) => state.content.subrequests[flattenToAppURL(mediaURL)] ?? {},
+    (state) => state.content.subrequests[flattenToAppURL(audioURL)] ?? {},
   );
 
   const closeModal = () => {
@@ -58,12 +61,12 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   };
 
   useEffect(() => {
-    if (!loading && !loaded) {
+    if (!loading && !loaded && audioURL) {
       dispatch(
-        getContent(flattenToAppURL(mediaURL), null, flattenToAppURL(mediaURL)),
+        getContent(flattenToAppURL(audioURL), null, flattenToAppURL(audioURL)),
       );
     }
-  }, [dispatch, mediaURL, loading, loaded]);
+  }, [dispatch, audioURL, loading, loaded]);
 
   useEffect(() => {
     if (viewIndex != null) {
@@ -125,9 +128,9 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
               )}
 
               {items[viewIndex]['@type'] === 'WildcardVideo' &&
-                data?.video_url && (
+                items[viewIndex]?.video_url && (
                   <div className="block video">
-                    <VideoViewer data={{ url: data.video_url }} />
+                    <VideoViewer data={{ url: items[viewIndex].video_url }} />
                   </div>
                 )}
               {items[viewIndex]['@type'] === 'WildcardAudio' &&
