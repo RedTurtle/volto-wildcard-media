@@ -14,6 +14,7 @@ import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
 
 import DefaultVideoSVG from 'volto-wildcard-media/components/Image/default-video.svg';
 import DefaultAudioSVG from 'volto-wildcard-media/components/Image/default-audio.svg';
+import VideoViewer from '@plone/volto/components/manage/Blocks/Video/Body';
 
 import { getContent, queryRelations } from '@plone/volto/actions';
 
@@ -136,16 +137,8 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
 
               {items[viewIndex]['@type'] === 'WildcardVideo' &&
                 items[viewIndex]?.video_url && (
-                  <iframe
-                    className="embedd-video mb-4"
-                    src={items[viewIndex].video_url}
-                    title={items[viewIndex].title}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
+                  <VideoViewer data={{ url: items[viewIndex].video_url }} />
                 )}
-
               {items[viewIndex]['@type'] === 'WildcardAudio' &&
                 data?.audio_file?.download && (
                   <audio
@@ -154,7 +147,6 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
                     src={data.audio_file.download}
                   ></audio>
                 )}
-
               {items.length > 1 && (
                 <Button
                   color="white"
