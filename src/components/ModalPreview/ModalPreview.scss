@@ -17,6 +17,10 @@
       min-height: 72vh;
       background: unset;
       padding-bottom: unset;
+
+      img.placeholder {
+        cursor: auto;
+      }
     }
   }
 }
