@@ -6,6 +6,7 @@ import React from 'react';
 import cx from 'classnames';
 import { PagePlaceholderTitle } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import config from '@plone/volto/registry';
+import VideoViewer from '@plone/volto/components/manage/Blocks/Video/Body';
 import { defineMessages, useIntl } from 'react-intl';
 
 /**
@@ -15,7 +16,7 @@ import { defineMessages, useIntl } from 'react-intl';
  * @returns {string} Markup of the view.
  */
 
- const messages = defineMessages({
+const messages = defineMessages({
   transcript_label: {
     id: 'transcript_label',
     defaultMessage: 'Trascrizione',
@@ -43,16 +44,9 @@ const VideoView = ({ content }) => {
 
       {/* Embedd video */}
       {content?.video_url ? (
-        <iframe
-          className="mb-4"
-          width="660"
-          height="415"
-          src={content.video_url}
-          title={content.title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullscreen
-        ></iframe>
+        <div className="block video">
+          <VideoViewer data={{ url: content.video_url }} />
+        </div>
       ) : (
         // {/* For video uploaded */}
         // ) : content?.video_file ? (
@@ -71,16 +65,17 @@ const VideoView = ({ content }) => {
       )}
 
       {/* Transcript */}
-      {(content?.transcript?.data && content?.transcript?.data !== '<p><br></p>') && (
-        <div className="mb-2">
-          <p className="mb-0">
-            <strong>{intl.formatMessage(messages.transcript_label)}</strong>
-          </p>
-          <span
-            dangerouslySetInnerHTML={{ __html: content.transcript.data }}
-          ></span>
-        </div>
-      )}
+      {content?.transcript?.data &&
+        content?.transcript?.data !== '<p><br></p>' && (
+          <div className="mb-2">
+            <p className="mb-0">
+              <strong>{intl.formatMessage(messages.transcript_label)}</strong>
+            </p>
+            <span
+              dangerouslySetInnerHTML={{ __html: content.transcript.data }}
+            ></span>
+          </div>
+        )}
     </div>
   );
 };

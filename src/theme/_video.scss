@@ -1,3 +1,13 @@
+.block.video {
+  .video-inner {
+    .ui.active.embed {
+      img.placeholder {
+        display: none;
+      }
+    }
+  }
+}
+
 video {
   width: 100%;
   background-color: #fff;

@@ -14,6 +14,7 @@ import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
 
 import DefaultVideoSVG from 'volto-wildcard-media/components/Image/default-video.svg';
 import DefaultAudioSVG from 'volto-wildcard-media/components/Image/default-audio.svg';
+import VideoViewer from '@plone/volto/components/manage/Blocks/Video/Body';
 
 import { getContent, queryRelations } from '@plone/volto/actions';
 
@@ -46,10 +47,13 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const audioUrl = items[viewIndex]['@id'];
+  const audioURL =
+    items[viewIndex]['@type'] === 'WildcardAudio'
+      ? items[viewIndex]['@id']
+      : null;
 
   const { loading, loaded, error, data } = useSelector(
-    (state) => state.content.subrequests[flattenToAppURL(audioUrl)] ?? {},
+    (state) => state.content.subrequests[flattenToAppURL(audioURL)] ?? {},
   );
 
   const closeModal = () => {
@@ -57,12 +61,12 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   };
 
   useEffect(() => {
-    if (!loading && !loaded) {
+    if (!loading && !loaded && audioURL) {
       dispatch(
-        getContent(flattenToAppURL(audioUrl), null, flattenToAppURL(audioUrl)),
+        getContent(flattenToAppURL(audioURL), null, flattenToAppURL(audioURL)),
       );
     }
-  }, [dispatch, audioUrl, loading, loaded]);
+  }, [dispatch, audioURL, loading, loaded]);
 
   useEffect(() => {
     if (viewIndex != null) {
@@ -70,19 +74,7 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
     } else {
       setModalIsOpen(false);
     }
-
-    // if (items[viewIndex]['@type'] === 'WildcardAudio') {
-    //   dispatch(
-    //     getContent(flattenToAppURL(items[viewIndex]['@id'])),
-    //     null,
-    //     getContent(flattenToAppURL(items[viewIndex]['@id'])),
-    //   );
-    // }
   }, [viewIndex]);
-
-  // useEffect(() => {
-  //   if (items[viewIndex]['@type'] === 'WildcardAudio') dispatch(getContent(items[viewIndex]['@id']));
-  // }, [dispatch, itempath, title]);
 
   return items?.length > 0 ? (
     <Modal
@@ -116,6 +108,7 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
             <div
               className={cx('item-preview', {
                 'audio-preview': items[viewIndex]['@type'] === 'WildcardAudio',
+                'video-preview': items[viewIndex]['@type'] === 'WildcardVideo',
               })}
             >
               {items.length > 1 && (
@@ -136,16 +129,10 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
 
               {items[viewIndex]['@type'] === 'WildcardVideo' &&
                 items[viewIndex]?.video_url && (
-                  <iframe
-                    className="embedd-video mb-4"
-                    src={items[viewIndex].video_url}
-                    title={items[viewIndex].title}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
+                  <div className="block video">
+                    <VideoViewer data={{ url: items[viewIndex].video_url }} />
+                  </div>
                 )}
-
               {items[viewIndex]['@type'] === 'WildcardAudio' &&
                 data?.audio_file?.download && (
                   <audio
@@ -154,7 +141,6 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
                     src={data.audio_file.download}
                   ></audio>
                 )}
-
               {items.length > 1 && (
                 <Button
                   color="white"
