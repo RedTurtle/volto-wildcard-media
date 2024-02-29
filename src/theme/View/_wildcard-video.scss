@@ -3,7 +3,8 @@
     .video-inner {
       .ui.embed {
         width: 660px;
-        height: 415px;
+        height: auto;
+        aspect-ratio: 16/9;
 
         background: unset;
         padding-bottom: unset;

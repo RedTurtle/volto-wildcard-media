@@ -21,7 +21,7 @@ import {
   ListingText,
 } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-
+import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
 import ModalPreview from 'volto-wildcard-media/components/ModalPreview/ModalPreview';
 
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
@@ -90,9 +90,53 @@ const MediaWithModalTemplate = ({
           {items.map((item, index) => {
             const listingText = <ListingText item={item} />;
 
-            const listingImage = ListingImage({ item });
-            const image = listingImage ? (
-              listingImage
+            let placeholder = ListingImage({ item });
+            if (!placeholder && item['@type'] === 'WildcardVideo') {
+              let placeholder_src = null;
+              const [computedPlaceholder] = videoUrlHelper(
+                item.video_url,
+                item?.preview_image,
+              );
+
+              if (computedPlaceholder) {
+                placeholder_src =
+                  'https://img.youtube.com/vi/' +
+                  computedPlaceholder +
+                  '/hqdefault.jpg';
+              }
+              console.log(computedPlaceholder);
+
+              if (item.video_url.match('list')) {
+                const matches = item.video_url.match(
+                  /^.*\?list=(.*)|^.*&list=(.*)$/,
+                );
+
+                let thumbnailID = null;
+                if (item.video_url.match(/\?v=(.*)&list/)) {
+                  thumbnailID = item.video_url.match(/^.*\?v=(.*)&list(.*)/)[1];
+                }
+                if (item.video_url.match(/\?v=(.*)\?list/)) {
+                  thumbnailID = item.video_url.match(
+                    /^.*\?v=(.*)\?list(.*)/,
+                  )[1];
+                }
+                placeholder_src =
+                  'https://img.youtube.com/vi/' +
+                  thumbnailID +
+                  '/hqdefault.jpg';
+              }
+              if (placeholder_src) {
+                placeholder = (
+                  <img
+                    src={placeholder_src}
+                    alt={intl.formatMessage(messages.image_placeholder_video)}
+                  />
+                );
+              }
+            }
+
+            const image = placeholder ? (
+              placeholder
             ) : item['@type'] === 'WildcardVideo' ? (
               <img
                 src={DefaultVideoSVG}

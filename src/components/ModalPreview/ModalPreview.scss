@@ -14,7 +14,9 @@
     width: 100%;
 
     .video-inner .ui.embed {
-      min-height: 72vh;
+      aspect-ratio: 16/9;
+      width: 100%;
+      height: auto;
       background: unset;
       padding-bottom: unset;
 
