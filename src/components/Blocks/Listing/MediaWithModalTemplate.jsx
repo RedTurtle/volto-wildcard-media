@@ -104,7 +104,6 @@ const MediaWithModalTemplate = ({
                   computedPlaceholder +
                   '/hqdefault.jpg';
               }
-              console.log(computedPlaceholder);
 
               if (item.video_url.match('list')) {
                 const matches = item.video_url.match(
