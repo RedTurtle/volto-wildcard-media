@@ -1,3 +1,12 @@
+
+
+## [1.1.3](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.2...v1.1.3) (2024-02-29)
+
+
+### Bug Fixes
+
+* video preview in listing ([1d86ccb](https://github.com/RedTurtle/volto-wildcard-media/commit/1d86ccb2ec15eb3e703af06bd3fa922e713b7c34))
+
 ### [1.1.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.1...v1.1.2) (2024-02-23)
 
 ### [1.1.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.0...v1.1.1) (2024-02-07)
