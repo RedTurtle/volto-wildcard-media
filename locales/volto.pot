@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-02-02T14:32:52.470Z\n"
+"POT-Creation-Date: 2024-03-02T22:55:04.106Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -12,6 +12,26 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#: components/Blocks/AudioBlock/Sidebar
+# defaultMessage: Audio selezionato
+msgid "Audio selezionato"
+msgstr ""
+
+#: components/Blocks/AudioBlock/Edit
+# defaultMessage: Seleziona un audio nella barra laterale.
+msgid "Seleziona un audio nella barra laterale."
+msgstr ""
+
+#: components/Blocks/AudioBlock/Sidebar
+# defaultMessage: Titolo del blocco
+msgid "Titolo del blocco"
+msgstr ""
+
+#: components/Blocks/AudioBlock/Sidebar
+# defaultMessage: Audio
+msgid "audioBlock"
+msgstr ""
 
 #: components/View/AudioView/AudioView
 # defaultMessage: Copia il codice
