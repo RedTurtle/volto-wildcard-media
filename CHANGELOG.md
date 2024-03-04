@@ -1,5 +1,17 @@
 
 
+## [1.2.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.3...v1.2.0) (2024-03-04)
+
+
+### Features
+
+* added new single audio block ([#2](https://github.com/RedTurtle/volto-wildcard-media/issues/2)) ([63585c0](https://github.com/RedTurtle/volto-wildcard-media/commit/63585c0d0b473a18e319f8989133ff6728d4fd6d))
+
+
+### Bug Fixes
+
+* removed console.log ([a204b14](https://github.com/RedTurtle/volto-wildcard-media/commit/a204b14a64127ec858c6ce92de7e932c22196350))
+
 ## [1.1.3](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.2...v1.1.3) (2024-02-29)
 
 
