@@ -1,5 +1,11 @@
 body.cms-ui .block.audio {
-  h2 {
+  h2,
+  audio,
+  .transcript {
     margin-bottom: 1rem;
+  }
+
+  .transcript > p {
+    margin-bottom: 0;
   }
 }

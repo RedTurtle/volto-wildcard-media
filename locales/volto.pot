@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-02T22:55:04.106Z\n"
+"POT-Creation-Date: 2024-03-06T00:04:32.411Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -68,6 +68,7 @@ msgstr ""
 msgid "image_placeholder_video"
 msgstr ""
 
+#: components/Blocks/AudioBlock/Body
 #: components/View/AudioView/AudioView
 #: components/View/VideoView/VideoView
 # defaultMessage: Trascrizione
