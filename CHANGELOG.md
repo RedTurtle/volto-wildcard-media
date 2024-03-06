@@ -1,5 +1,12 @@
 
 
+## [1.2.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.2.0...v1.2.1) (2024-03-06)
+
+
+### Maintenance
+
+* updated audio block with transcript ([ae299c1](https://github.com/RedTurtle/volto-wildcard-media/commit/ae299c1bd89d9469cd14c89250641600591ff829))
+
 ## [1.2.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.1.3...v1.2.0) (2024-03-04)
 
 
