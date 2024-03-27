@@ -1,5 +1,12 @@
 
 
+## [1.2.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.2.1...v1.2.2) (2024-03-27)
+
+
+### Bug Fixes
+
+* modal preview ([315a385](https://github.com/RedTurtle/volto-wildcard-media/commit/315a385afb5b2778394fd95de87d847ddc722bc7))
+
 ## [1.2.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.2.0...v1.2.1) (2024-03-06)
 
 
