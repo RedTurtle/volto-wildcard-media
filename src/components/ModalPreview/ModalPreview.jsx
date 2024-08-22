@@ -46,12 +46,9 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
     ? items[viewIndex]['@id']
     : null;
 
-  const { loading, loaded, error, data } = useSelector((state) => {
-    // debugger;
-    console.log('url', flattenToAppURL(mediaURL));
-    console.log('state', state.content.subrequests[flattenToAppURL(mediaURL)]);
-    return state.content.subrequests[flattenToAppURL(mediaURL)] ?? {};
-  });
+  const { loading, loaded, error, data } = useSelector(
+    (state) => state.content.subrequests[flattenToAppURL(mediaURL)] ?? {},
+  );
 
   const closeModal = () => {
     setViewIndex(null);
