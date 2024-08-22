@@ -91,7 +91,11 @@ const MediaWithModalTemplate = ({
             const listingText = <ListingText item={item} />;
 
             let placeholder = ListingImage({ item });
-            if (!placeholder && item['@type'] === 'WildcardVideo') {
+            if (
+              !placeholder &&
+              item['@type'] === 'WildcardVideo' &&
+              item.video_url
+            ) {
               let placeholder_src = null;
               const [computedPlaceholder] = videoUrlHelper(
                 item.video_url,
@@ -123,6 +127,13 @@ const MediaWithModalTemplate = ({
                   'https://img.youtube.com/vi/' +
                   thumbnailID +
                   '/hqdefault.jpg';
+              } else if (
+                !placeholder &&
+                item['@type'] === 'WildcardVideo' &&
+                item.video_file
+              ) {
+                // placeholder_src = item.video_file.download;
+                placeholder_src = null;
               }
               if (placeholder_src) {
                 placeholder = (

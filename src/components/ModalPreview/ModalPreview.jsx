@@ -7,16 +7,9 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { Modal, ModalBody, Button, ModalHeader } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { FontAwesomeIcon } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { Checkbox, ConditionalEmbed } from 'volto-gdpr-privacy';
-import { Embed, Message } from 'semantic-ui-react';
-import { videoUrlHelper } from 'design-comuni-plone-theme/helpers';
-
-import DefaultVideoSVG from 'volto-wildcard-media/components/Image/default-video.svg';
-import DefaultAudioSVG from 'volto-wildcard-media/components/Image/default-audio.svg';
 import VideoViewer from '@plone/volto/components/manage/Blocks/Video/Body';
 
-import { getContent, queryRelations } from '@plone/volto/actions';
+import { getContent } from '@plone/volto/actions';
 
 /* STYLE */
 import 'volto-wildcard-media/components/ModalPreview/ModalPreview.scss';
@@ -47,26 +40,31 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const audioURL =
-    items[viewIndex]['@type'] === 'WildcardAudio'
-      ? items[viewIndex]['@id']
-      : null;
+  const mediaURL = ['WildcardAudio', 'WildcardVideo'].includes(
+    items[viewIndex]['@type'],
+  )
+    ? items[viewIndex]['@id']
+    : null;
 
-  const { loading, loaded, error, data } = useSelector(
-    (state) => state.content.subrequests[flattenToAppURL(audioURL)] ?? {},
-  );
+  const { loading, loaded, error, data } = useSelector((state) => {
+    // debugger;
+    console.log('url', flattenToAppURL(mediaURL));
+    console.log('state', state.content.subrequests[flattenToAppURL(mediaURL)]);
+    return state.content.subrequests[flattenToAppURL(mediaURL)] ?? {};
+  });
 
   const closeModal = () => {
     setViewIndex(null);
   };
 
   useEffect(() => {
-    if (!loading && !loaded && audioURL) {
+    // if (mediaURL) {
+    if (!loading && !loaded && mediaURL) {
       dispatch(
-        getContent(flattenToAppURL(audioURL), null, flattenToAppURL(audioURL)),
+        getContent(flattenToAppURL(mediaURL), null, flattenToAppURL(mediaURL)),
       );
     }
-  }, [dispatch, audioURL, loading, loaded]);
+  }, [dispatch, mediaURL, loading, loaded]);
 
   useEffect(() => {
     if (viewIndex != null) {
@@ -127,12 +125,30 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
                 </Button>
               )}
 
-              {items[viewIndex]['@type'] === 'WildcardVideo' &&
-                items[viewIndex]?.video_url && (
+              {data && data['@type'] === 'WildcardVideo' ? (
+                data.video_url ? (
                   <div className="block video">
-                    <VideoViewer data={{ url: items[viewIndex].video_url }} />
+                    <VideoViewer data={{ url: data.video_url }} />
                   </div>
-                )}
+                ) : (
+                  data.video_file && (
+                    <video
+                      className="mb-4"
+                      controls
+                      width={data.width ?? 560}
+                      height={data.height ?? 315}
+                    >
+                      <source
+                        src={data.video_file.download}
+                        type={data.video_file['content-type']}
+                      />
+                    </video>
+                  )
+                )
+              ) : (
+                <>novideo</>
+              )}
+
               {items[viewIndex]['@type'] === 'WildcardAudio' &&
                 data?.audio_file?.download && (
                   <audio
@@ -141,6 +157,7 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
                     src={data.audio_file.download}
                   ></audio>
                 )}
+
               {items.length > 1 && (
                 <Button
                   color="white"
