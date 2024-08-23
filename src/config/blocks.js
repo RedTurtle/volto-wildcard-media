@@ -37,6 +37,7 @@ export const wildcardMediaBlocks = (config) => {
       id: 'mediaWithModalTemplate',
       isDefault: false,
       title: 'Video e audio con modale',
+      fullobjects: true,
       template: MediaWithModalTemplate,
       skeleton: MediaWithModalTemplateSkeleton,
       schemaEnhancer: ({ schema, formData, intl }) => {

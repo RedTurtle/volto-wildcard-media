@@ -47,20 +47,19 @@ const VideoView = ({ content }) => {
         <div className="block video">
           <VideoViewer data={{ url: content.video_url }} />
         </div>
+      ) : content?.video_file ? (
+        <video
+          className="mb-4"
+          controls
+          width={content?.width ?? 560}
+          height={content?.height ?? 315}
+        >
+          <source
+            src={content.video_file.download}
+            type={content.video_file['content-type']}
+          />
+        </video>
       ) : (
-        // {/* For video uploaded */}
-        // ) : content?.video_file ? (
-        //   <video
-        //     className="mb-4"
-        //     controls
-        //     width={content?.width ?? 560}
-        //     height={content?.height ?? 315}
-        //   >
-        //     <source
-        //       src={content.video_file.download}
-        //       type={content.video_file['content-type']}
-        //     />
-        //   </video>
         <></>
       )}
 
