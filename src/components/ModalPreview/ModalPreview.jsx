@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { useSelector, useDispatch } from 'react-redux';
 import cx from 'classnames';
 
 import PropTypes from 'prop-types';
 import { Modal, ModalBody, Button, ModalHeader } from 'design-react-kit';
 import { Icon } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import VideoViewer from '@plone/volto/components/manage/Blocks/Video/Body';
-
-import { getContent } from '@plone/volto/actions';
-
-/* STYLE */
 import 'volto-wildcard-media/components/ModalPreview/ModalPreview.scss';
 
 const messages = defineMessages({
@@ -38,30 +32,29 @@ const messages = defineMessages({
  */
 const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const mediaURL = ['WildcardAudio', 'WildcardVideo'].includes(
-    items[viewIndex]['@type'],
-  )
-    ? items[viewIndex]['@id']
-    : null;
-
-  const { loading, loaded, error, data } = useSelector(
-    (state) => state.content.subrequests[flattenToAppURL(mediaURL)] ?? {},
-  );
+  // const dispatch = useDispatch();
+  // const mediaURL = ['WildcardAudio', 'WildcardVideo'].includes(
+  //   items[viewIndex]['@type'],
+  // )
+  //   ? items[viewIndex]['@id']
+  //   : null;
+  // const { loading, loaded, error, data } = useSelector(
+  //   (state) => state.content.subrequests[flattenToAppURL(mediaURL)] ?? {},
+  // );
+  const data = items[viewIndex];
 
   const closeModal = () => {
     setViewIndex(null);
   };
 
-  useEffect(() => {
-    // if (mediaURL) {
-    if (!loading && !loaded && mediaURL) {
-      dispatch(
-        getContent(flattenToAppURL(mediaURL), null, flattenToAppURL(mediaURL)),
-      );
-    }
-  }, [dispatch, mediaURL, loading, loaded]);
+  // useEffect(() => {
+  //   if (!loading && !loaded && mediaURL) {
+  //     dispatch(
+  //       getContent(flattenToAppURL(mediaURL), null, flattenToAppURL(mediaURL)),
+  //     );
+  //   }
+  // }, [dispatch, mediaURL, loading, loaded]);
 
   useEffect(() => {
     if (viewIndex != null) {
