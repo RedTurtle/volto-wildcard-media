@@ -1,5 +1,12 @@
 
 
+## [1.3.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.2.2...v1.3.0) (2024-08-23)
+
+
+### Features
+
+* video_file ([#3](https://github.com/RedTurtle/volto-wildcard-media/issues/3)) ([a2b7d46](https://github.com/RedTurtle/volto-wildcard-media/commit/a2b7d463b589220f389532b71c5cd5270b3cd227))
+
 ## [1.2.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.2.1...v1.2.2) (2024-03-27)
 
 
