@@ -47,4 +47,10 @@ export const wildcardMediaBlocks = (config) => {
       },
     },
   ];
+
+  config.settings.searchBlockTemplates = [
+    ...(config.settings.searchBlockTemplates || []),
+    'mediaWithModalTemplate',
+  ];
+
 };
