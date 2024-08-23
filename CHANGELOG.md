@@ -1,5 +1,12 @@
 
 
+## [1.3.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.3.0...v1.3.1) (2024-08-23)
+
+
+### Bug Fixes
+
+* manage edge cases ([2f8a223](https://github.com/RedTurtle/volto-wildcard-media/commit/2f8a223383bd24a86221783d5991cfa7f30b4f2f))
+
 ## [1.3.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.2.2...v1.3.0) (2024-08-23)
 
 
