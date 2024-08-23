@@ -92,10 +92,10 @@ const MediaWithModalTemplate = ({
 
             // TODO: use scales to get a thumbnail
             let placeholder = ListingImage({ item }) ||
-                item.preview_image?.download ? (<img
+                (item?.preview_image?.download ? (<img
                     src={item.preview_image.download}
                     alt={intl.formatMessage(messages.image_placeholder_video)}
-                  />): null;
+                  />): null);
             if (
               !placeholder &&
               item['@type'] === 'WildcardVideo' &&
