@@ -1,5 +1,12 @@
 
 
+## [1.4.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.3.1...v1.4.0) (2024-08-23)
+
+
+### Features
+
+* add mediaWithModalTemplate variation for searchBlock ([129940c](https://github.com/RedTurtle/volto-wildcard-media/commit/129940c954ca29a1f7b5e3c161483ef2d32f9759))
+
 ## [1.3.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.3.0...v1.3.1) (2024-08-23)
 
 
