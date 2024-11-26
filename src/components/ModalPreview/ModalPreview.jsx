@@ -21,6 +21,10 @@ const messages = defineMessages({
     id: 'video_close_preview',
     defaultMessage: "Chiudi l'anteprima",
   },
+  transcript_label: {
+    id: 'transcript_label',
+    defaultMessage: 'Trascrizione',
+  },
 });
 
 /**
@@ -164,6 +168,21 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
                 </Button>
               )}
             </div>
+
+            {items[viewIndex].transcript && (
+              <div className="transcript mt-3">
+                <p className="mb-0">
+                  <strong>
+                    {intl.formatMessage(messages.transcript_label)}
+                  </strong>
+                </p>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: items[viewIndex].transcript.data,
+                  }}
+                ></span>
+              </div>
+            )}
           </ModalBody>
         </>
       )}
