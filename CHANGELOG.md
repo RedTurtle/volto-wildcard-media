@@ -1,5 +1,17 @@
 
 
+## [1.5.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.4.0...v1.5.0) (2024-11-26)
+
+
+### Features
+
+* display transcript in modal video preview ([ab61e7c](https://github.com/RedTurtle/volto-wildcard-media/commit/ab61e7c5ff4fbdff396944a6c09ed47ac52f9a02))
+
+
+### Maintenance
+
+* updated locales ([b7e08d3](https://github.com/RedTurtle/volto-wildcard-media/commit/b7e08d3f3f66ad94571bc93e84b5ccf928f860e2))
+
 ## [1.4.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.3.1...v1.4.0) (2024-08-23)
 
 
