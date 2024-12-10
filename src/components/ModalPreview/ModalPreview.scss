@@ -49,3 +49,11 @@
     }
   }
 }
+
+.modal
+  .modal-dialog.gallery-preview.wildcard-media-gallery
+  .modal-content
+  .modal-body {
+  display: block;
+  overflow: scroll;
+}

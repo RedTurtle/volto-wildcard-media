@@ -74,7 +74,7 @@ const ModalPreview = ({ id, viewIndex, setViewIndex, items }) => {
       wrapClassName="public-ui"
       id={`gallery-preview-${id}`}
       size="xl"
-      className="gallery-preview"
+      className="gallery-preview wildcard-media-gallery"
       onExit={() => {
         setViewIndex(null);
         setModalIsOpen(false);
