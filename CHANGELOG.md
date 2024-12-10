@@ -1,5 +1,12 @@
 
 
+## [1.5.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.5.0...v1.5.1) (2024-12-10)
+
+
+### Bug Fixes
+
+* modal content scroll when there's a lot of content ([38ce9db](https://github.com/RedTurtle/volto-wildcard-media/commit/38ce9db17cff011383105c694fdb6970d2db387a))
+
 ## [1.5.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.4.0...v1.5.0) (2024-11-26)
 
 
