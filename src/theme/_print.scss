@@ -1,0 +1,21 @@
+@media print {
+    .public-ui {
+        .block.listing.mediaWithModalTemplate {
+            .card-with-image-template.card-with-modal-video {
+                .listing-item h3 {
+                font-size: 1.5rem;
+                }
+            }
+        }
+
+
+        audio {
+            border: 1px solid #000;
+            border-radius: 20px;
+        }
+
+        textarea#textEmbed {
+            min-height: 140px;
+        }
+    }
+}
