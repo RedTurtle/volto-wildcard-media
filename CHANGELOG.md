@@ -1,5 +1,12 @@
 
 
+## [1.5.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.5.1...v1.5.2) (2024-12-13)
+
+
+### Maintenance
+
+* updated print styles ([eb76640](https://github.com/RedTurtle/volto-wildcard-media/commit/eb76640dd9c049d5a1a3151b54db59730127430a))
+
 ## [1.5.1](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.5.0...v1.5.1) (2024-12-10)
 
 
