@@ -1,5 +1,12 @@
 
 
+## [1.6.0](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.5.2...v1.6.0) (2025-03-17)
+
+
+### Features
+
+* added PagePlaceholderHeaderEnd ([9ed55a7](https://github.com/RedTurtle/volto-wildcard-media/commit/9ed55a7a61a98e97f14e540649e1d4123fcd7581))
+
 ## [1.5.2](https://github.com/RedTurtle/volto-wildcard-media/compare/v1.5.1...v1.5.2) (2024-12-13)
 
 
