@@ -4,7 +4,10 @@
  */
 import React from 'react';
 import cx from 'classnames';
-import { PagePlaceholderTitle } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import {
+  PagePlaceholderTitle,
+  PagePlaceholderHeaderEnd,
+} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import config from '@plone/volto/registry';
 import VideoViewer from '@plone/volto/components/manage/Blocks/Video/Body';
 import { defineMessages, useIntl } from 'react-intl';
@@ -40,6 +43,7 @@ const VideoView = ({ content }) => {
             <p className="description">{content?.description}</p>
           </div>
         </div>
+        <PagePlaceholderHeaderEnd content={content} />
       </div>
 
       {/* Embedd video */}
